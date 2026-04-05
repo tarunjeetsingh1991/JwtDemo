@@ -15,7 +15,13 @@ public class HomeController {
 
     @Autowired
     private UserService userService;
-
+    
+    @GetMapping("/home")
+    public String home()
+    {
+    	return "<h1>HOME PAGE</h1>";
+    }
+    
     @GetMapping("/home/users")
     public List<AppUser> getUsers() {
         return userService.getUsers();
