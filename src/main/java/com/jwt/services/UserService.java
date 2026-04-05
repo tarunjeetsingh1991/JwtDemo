@@ -2,6 +2,7 @@ package com.jwt.services;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,6 +22,12 @@ public class UserService {
 
     public List<AppUser> getUsers() {
         return userRepository.findAll();
+    }
+    
+    public List<AppUser> getUsersSortedNames() {
+        return userRepository.findAll().stream()
+        		.sorted((s1,s2) -> s1.getUsername().compareTo(s2.getUsername()))
+        		.collect(Collectors.toList());
     }
 
     public AppUser registerUser(String name, String email, String username, String rawPassword) {
