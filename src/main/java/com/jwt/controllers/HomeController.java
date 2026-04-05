@@ -22,6 +22,12 @@ public class HomeController {
     	return "<h1>HOME PAGE</h1>";
     }
     
+    @GetMapping("/home2")
+    public String home2()
+    {
+    	return "<h1>HOME PAGE 2</h1>";
+    }
+    
     @GetMapping("/home/users")
     public List<AppUser> getUsers() {
         return userService.getUsers();
