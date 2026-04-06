@@ -16,11 +16,17 @@ public class HomeController {
     @Autowired
     private UserService userService;
     
-    // removed extra home controller
     @GetMapping("/home")
     public String home()
     {
     	return "<h1>HOME PAGE</h1>";
+    }
+    
+    // added extra home controller
+    @GetMapping("/home2")
+    public String home2()
+    {
+    	return "<h1>HOME PAGE 2</h1>";
     }
     
     @GetMapping("/home/users")
