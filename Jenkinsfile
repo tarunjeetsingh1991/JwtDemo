@@ -48,12 +48,12 @@ pipeline {
                 subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """Jenkins build succeeded.
 
-Job Name: ${env.JOB_NAME}
-Build Number: ${env.BUILD_NUMBER}
-Build URL: ${env.BUILD_URL}
-
-The application was built, tested, packaged, and deployed on port 8081.
-"""
+				Job Name: ${env.JOB_NAME}
+				Build Number: ${env.BUILD_NUMBER}
+				Build URL: ${env.BUILD_URL}
+				
+				The application was built, tested, packaged, and deployed on port 8081.
+				"""
             )
         }
 
@@ -62,13 +62,13 @@ The application was built, tested, packaged, and deployed on port 8081.
                 to: 'singh.tarunjeet1991@gmail.com',
                 subject: "FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """Jenkins build failed.
-
-Job Name: ${env.JOB_NAME}
-Build Number: ${env.BUILD_NUMBER}
-Build URL: ${env.BUILD_URL}
-
-Please check the Jenkins Console Output for error details.
-"""
+	
+				Job Name: ${env.JOB_NAME}
+				Build Number: ${env.BUILD_NUMBER}
+				Build URL: ${env.BUILD_URL}
+				
+				Please check the Jenkins Console Output for error details.
+				"""
             )
         }
 
