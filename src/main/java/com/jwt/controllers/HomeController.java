@@ -22,19 +22,7 @@ public class HomeController {
     	return "<h1>HOME PAGE</h1>";
     }
     
-    // added extra home controller
-    @GetMapping("/home2")
-    public String home2()
-    {
-    	return "<h1>HOME PAGE 2</h1>";
-    }
-    
-    // added extra home controller
-    @GetMapping("/home3")
-    public String home3()
-    {
-    	return "<h1>HOME PAGE 3</h1>";
-    }
+    // removed extra home controller
     
     @GetMapping("/home/users")
     public List<AppUser> getUsers() {
